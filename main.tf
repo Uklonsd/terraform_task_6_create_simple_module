@@ -1,14 +1,15 @@
 terraform {
   required_providers {
     azurerm = {
-      source = "hashicorp/azurerm"
+      source  = "hashicorp/azurerm"
       version = "4.26.0"
     }
   }
 }
 
 provider "azurerm" {
-  subscription_id = local.subscription_id
+  features {}
+  subscription_id = var.subscription_id
 }
 
 module "resource_group_storage" {
